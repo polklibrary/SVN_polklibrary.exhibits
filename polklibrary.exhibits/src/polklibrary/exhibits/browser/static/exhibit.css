@@ -1,0 +1,64 @@
+#edit {
+    right: 20px;
+    position: fixed;
+    top: 0;
+}
+#edit a{
+    background-color: #0077AD;
+    border-radius: 0px 0px 10px 10px;
+    color: white;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none !important;
+}
+#edit a:hover{
+    background-color: #006492;
+}
+
+/* MAIN ============================================================================= */
+
+body {
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+a {
+    color: #6CAED8;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+#header {
+    background-color: black;
+    background-position: middle left;
+    padding: 40px;
+}
+
+#banner {
+    height: 15px;
+}
+
+#title {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#breadcrumbs {
+    background-color: #999999;
+    padding: 5px 15px 8px;
+}
+#breadcrumbs a {
+    color: white;
+    vertical-align: bottom;
+}
+#breadcrumbs span {
+    color: #bbbbbb;
+    vertical-align: bottom;
+}
