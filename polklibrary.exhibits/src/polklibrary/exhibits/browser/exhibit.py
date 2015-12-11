@@ -3,9 +3,8 @@ from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.security import checkPermission
-
 from plone.protect.utils import addTokenToUrl
-
+import HTMLParser
 
 class ExhibitView(BrowserView):
 
@@ -20,11 +19,13 @@ class ExhibitView(BrowserView):
 
     @property
     def exhibit_js(self):
-        return str(self.exhibit.js)
+        h = HTMLParser.HTMLParser()
+        return h.unescape(self.exhibit.js)
         
     @property
     def exhibit_css(self):
-        return str(self.exhibit.css)
+        h = HTMLParser.HTMLParser()
+        return h.unescape(self.exhibit.css)
         
     @property
     def exhibit(self):
