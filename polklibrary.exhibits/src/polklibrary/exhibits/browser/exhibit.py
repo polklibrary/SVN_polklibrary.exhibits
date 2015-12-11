@@ -19,6 +19,14 @@ class ExhibitView(BrowserView):
         return self.context.body.raw
 
     @property
+    def exhibit_js(self):
+        return str(self.exhibit.js)
+        
+    @property
+    def exhibit_css(self):
+        return str(self.exhibit.css)
+        
+    @property
     def exhibit(self):
         return self._exhibit(self.context)
     
