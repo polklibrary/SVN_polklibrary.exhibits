@@ -20,12 +20,12 @@ class ExhibitView(BrowserView):
     @property
     def exhibit_js(self):
         h = HTMLParser.HTMLParser()
-        return h.unescape(self.exhibit.js)
+        return h.unescape(str(self.exhibit.js))
         
     @property
     def exhibit_css(self):
         h = HTMLParser.HTMLParser()
-        return h.unescape(self.exhibit.css)
+        return h.unescape(str(self.exhibit.css))
         
     @property
     def exhibit(self):
