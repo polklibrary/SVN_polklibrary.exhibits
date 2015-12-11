@@ -19,13 +19,18 @@ class ExhibitView(BrowserView):
 
     @property
     def exhibit_js(self):
-        h = HTMLParser.HTMLParser()
-        return h.unescape(str(self.exhibit.js))
+        return self._unescape(str(self.exhibit.js))
         
     @property
     def exhibit_css(self):
-        h = HTMLParser.HTMLParser()
-        return h.unescape(str(self.exhibit.css))
+        return self._unescape(str(self.exhibit.css))
+        
+    def _unescape(self, data):
+        data = data.replace('&amp;','&')
+        data = data.replace('&gt;','>')
+        data = data.replace('&lt;','<')
+        data = data.replace('&quot;','"')
+        return data
         
     @property
     def exhibit(self):
