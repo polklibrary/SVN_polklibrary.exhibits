@@ -83,8 +83,6 @@ class IExhibit(model.Schema):
     js = schema.Text(
             title=u"Exhibit Javascript Plugin",
             description=u"You must include the &lt;script&gt; elements",
-            default_mime_type='text/plain',
-            output_mime_type='text/plain',
             required=False,
             default=unicode(default_js),
         )
@@ -92,8 +90,6 @@ class IExhibit(model.Schema):
     css = schema.Text(
             title=u"Exhibit CSS Plugin",
             description=u"You must include the &lt;style&gt; elements",
-            default_mime_type='text/plain',
-            output_mime_type='text/plain',
             required=False,
             default=unicode(default_css),
         )
