@@ -22,12 +22,21 @@
 </head>
 <body class="${view/body_classes}">
 	
-    <div id="edit">
-        <a href="${view/exhibit/absolute_url}/++add++polklibrary.exhibits.models.exitem">Add Exhibit Item</a>
-        <a href="${view/context/absolute_url}/edit">Edit Item</a>
+    <div id="edit" tal:condition="view/is_editor">
+        <a class="exhibit-published" 
+           title="Make Private?"
+           tal:condition="view/is_published"
+           tal:attributes="href python:view.change_state_tokenize(view.exhibit.absolute_url() + '/content_status_modify?workflow_action=retract')">Currently: Published</a>
+        <a class="exhibit-private" 
+           title="Make Published?"
+           tal:condition="not: view/is_published"
+           tal:attributes="href python:view.change_state_tokenize(view.exhibit.absolute_url() + '/content_status_modify?workflow_action=publish')">Currently: Private</a>
+        <a href="${view/context/absolute_url}/edit">Edit</a>
+        <a href="${view/exhibit/absolute_url}/++add++polklibrary.exhibits.models.exitem">Add Content</a>
         <a href="${view/exhibit/absolute_url}/folder_contents">Exhibit Contents</a>
         <a href="${view/exhibit/absolute_url}/edit">Edit Exhibit</a>
     </div>
+        
     
     <div id="header">
         <div id="title">

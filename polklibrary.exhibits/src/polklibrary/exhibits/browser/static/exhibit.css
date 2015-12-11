@@ -1,64 +1,35 @@
-#edit {
-    right: 20px;
-    position: fixed;
-    top: 0;
-}
-#edit a{
-    background-color: #0077AD;
-    border-radius: 0px 0px 10px 10px;
-    color: white;
-    display: inline-block;
-    margin: 0 5px;
-    padding: 5px 10px;
-    text-decoration: none !important;
-}
-#edit a:hover{
-    background-color: #006492;
-}
-
-/* MAIN ============================================================================= */
-
 body {
-    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
     padding: 0;
     margin: 0;
     position: relative;
 }
-
 a {
-    color: #6CAED8;
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
 }
 
-#header {
-    background-color: black;
-    background-position: middle left;
-    padding: 40px;
-}
 
-#banner {
-    height: 15px;
+#edit {
+    background-color: #333;
+    border-bottom: 1px solid #666;
+    font-size:0; 
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
-
-#title {
+#edit a{
+    background-color: #0077AD;
+    border-right: 1px solid #006390;
     color: white;
-    font-size: 32px;
-    font-weight: bold;
+    display: inline-block;
+    font-size:14px; 
+    padding: 5px 10px;
+    text-decoration: none !important;
 }
-
-#breadcrumbs {
-    background-color: #999999;
-    padding: 5px 15px 8px;
-}
-#breadcrumbs a {
-    color: white;
-    vertical-align: bottom;
-}
-#breadcrumbs span {
-    color: #bbbbbb;
-    vertical-align: bottom;
-}
+#edit a:hover{ background-color: #006492; }
+#edit  .exhibit-published { background-color: #38973C; }
+#edit  .exhibit-published:hover { background-color: #973938; }
+#edit  .exhibit-private { background-color: #973938; }
+#edit  .exhibit-private:hover { background-color: #38973C; }

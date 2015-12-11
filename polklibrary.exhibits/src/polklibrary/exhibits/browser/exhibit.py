@@ -2,6 +2,10 @@ from plone import api
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope.security import checkPermission
+
+from plone.protect.utils import addTokenToUrl
+
 
 class ExhibitView(BrowserView):
 
@@ -13,7 +17,7 @@ class ExhibitView(BrowserView):
 
     def get_body(self):
         return self.context.body.raw
-        
+
     @property
     def exhibit(self):
         return self._exhibit(self.context)
@@ -39,8 +43,21 @@ class ExhibitView(BrowserView):
             crumbs.append(self.context)
         return crumbs
             
+    def change_state_tokenize(self, url):
+        return addTokenToUrl(url)
+    
+    @property
+    def is_published(self):
+        return 'private' != api.content.get_state(obj=self.exhibit, default='Unknown')
+            
+    @property
+    def is_editor(self):
+        perms = ['cmf.ManagePortal', 'cmf.ModifyPortalContent', 'cmf.AddPortalContent']
+        passed = False
+        for a in perms:
+            passed = passed or checkPermission('cmf.RequestReview', self.context)
+        return passed
            
-        
     @property
     def portal(self):
         return api.portal.get()

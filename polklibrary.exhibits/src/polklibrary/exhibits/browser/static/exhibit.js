@@ -22,7 +22,7 @@ $(document).ready(function(){
             var js_textarea = $('.editor-js');
             var editor_js = ace.edit('editor-js');
             editor_js.setTheme("ace/theme/chrome");
-            editor_js.getSession().setMode("ace/mode/script");
+            editor_js.getSession().setMode("ace/mode/javascript");
             editor_js.getSession().setValue(js_textarea.val());
             editor_js.getSession().on('change', function(){
                 js_textarea.val(editor_js.getSession().getValue());
@@ -36,6 +36,11 @@ $(document).ready(function(){
             editor_css.getSession().setValue(css_textarea.val());
             editor_css.getSession().on('change', function(){
                 css_textarea.val(editor_css.getSession().getValue());
+                $("#formfield-form-widgets-body iframe").contents().find("head").find(".active-edits").remove();
+                $("#formfield-form-widgets-body iframe").contents().find("head").append(
+                    '<style class="active-edits">' + editor_css.getSession().getValue() + '</style>'
+                );
+                
             });
             
         }
