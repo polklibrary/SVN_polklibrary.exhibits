@@ -12,7 +12,7 @@
     <script data-bundle="basic" src="${view/portal/absolute_url}/++plone++static/components/jquery/dist/jquery.min.js" type="text/javascript" ></script>
     
     <script type="text/javascript">
-        ${view/exhibit_js}
+        <tal:block replace="structure view/exhibit_js" />
     </script>
    
     <style>
