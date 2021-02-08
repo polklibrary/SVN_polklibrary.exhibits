@@ -4,7 +4,6 @@ from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.security import checkPermission
 from plone.protect.utils import addTokenToUrl
-import HTMLParser
 
 class ExhibitView(BrowserView):
 
