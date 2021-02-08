@@ -23,7 +23,6 @@ src/polklibrary/exhibits/setuphandlers.py
 src/polklibrary/exhibits/testing.py
 src/polklibrary/exhibits/browser/__init__.py
 src/polklibrary/exhibits/browser/configure.zcml
-src/polklibrary/exhibits/browser/edit_exhibit.pt
 src/polklibrary/exhibits/browser/exhibit.pt
 src/polklibrary/exhibits/browser/exhibit.py
 src/polklibrary/exhibits/browser/overrides/.gitkeep
@@ -41,6 +40,7 @@ src/polklibrary/exhibits/profiles/default/jsregistry.xml
 src/polklibrary/exhibits/profiles/default/metadata.xml
 src/polklibrary/exhibits/profiles/default/polklibraryexhibits_default.txt
 src/polklibrary/exhibits/profiles/default/types.xml
+src/polklibrary/exhibits/profiles/default/workflows.xml
 src/polklibrary/exhibits/profiles/default/types/polklibrary.exhibits.models.exhibit.xml
 src/polklibrary/exhibits/profiles/default/types/polklibrary.exhibits.models.exitem.xml
 src/polklibrary/exhibits/profiles/uninstall/browserlayer.xml
